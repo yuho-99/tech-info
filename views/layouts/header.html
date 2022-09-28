@@ -1,0 +1,31 @@
+<div>
+  <!-- 导航 -->
+  <nav class="bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- 左侧 Logo -->
+        <div class="flex items-center text-white text-3xl">
+          Tech Info
+        </div>
+        <!-- 导航 -->
+        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+          <div class="hidden sm:block sm:ml-6">
+            <div class="flex space-x-6 pl-10">
+              <!-- 设置首页，因为首页不是分类，在数据库中不存在，要单独设置 -->
+              <a href="/" class="<%= current ? 'nav-item' : 'nav-item-cur' %>" aria-current="page">
+                首页
+              </a>
+              <%
+                for (var i = 0; i < cate.length; i++) {
+              %>
+              <a href="/<%= cate[i]._id %>" class="<%= current === cate[i]._id.toString() ? 'nav-item-cur': 'nav-item' %>">
+                <%= cate[i].name %>
+              </a>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>

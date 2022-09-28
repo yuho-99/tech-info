@@ -7,5 +7,9 @@ module.exports = {
     port: process.env.PORT || 3000
   },
   // 数据库设置 
-  db: {}
+  db: {
+    url: process.env.MONGODB_URL ||'mongodb://localhost:27017/techinfoapi'
+  },
+  // 设置jwt使用密钥
+  jwtPrivateKey: 'e3075c98-7d67-4a01-be14-f268fbadf321'
 }

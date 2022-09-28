@@ -1,0 +1,61 @@
+<%- include("./layouts/base.html") %>
+</head>
+<body>
+  <%- include("./layouts/header.html") %>
+  
+  <div class="flex flex-col max-w-7xl mx-auto">
+    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="py-5 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+              <!-- 文章条目 -->
+              <tr>
+                <th scope="col" class="px-6 py-3 text-left text-xs text-gray-500">
+                  标题
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-xs text-gray-500">
+                  类别
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-xs text-gray-500">
+                  作者
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-xs text-gray-500">
+                  创建时间
+                </th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+              <!-- 文章结构 -->
+              <% for (var i = 0; i < article.length; i++) { %>
+              <tr>
+                <!-- 标题 -->
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <a href="/articles/<%= article[i]._id %>">
+                    <%= article[i].title %>
+                  </a>
+                </td>
+                <!-- 类别 -->
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <%= article[i].category.name %>
+                </td>
+                <!-- 作者 -->
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <%= article[i].author.name %>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                  <!-- 创作时间 -->
+                  <%= +article[i].createdAt %>
+                </td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include("./layouts/footer.html") %>
+</body>
+</html>

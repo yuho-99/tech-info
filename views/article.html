@@ -1,0 +1,17 @@
+<%- include("./layouts/base.html") %>
+</head>
+<body>
+  <%- include("./layouts/header.html") %>
+
+  <div class="max-w-7xl mx-auto py-4">
+    <h1 class="text-4xl sm:text-xl lg:text-6xl leading-none font-extrabold tracking-tight text-gray-900 mt-10 mb-8 sm:mt-14 sm:mb-10">
+      <%= article.title %>
+    </h1>
+    <div class="sm:text-2xl font-medium">
+      <%- article.content %>
+    </div>
+  </div>
+  
+  <%- include("./layouts/footer.html") %>
+</body>
+</html>
